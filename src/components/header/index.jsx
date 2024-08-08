@@ -13,7 +13,6 @@ import { loginUser, logoutUser} from "../../redux/user/actions"
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
-
   const { currentUser } = useSelector(rootReducer => rootReducer.userReducer);
 
   const dispatch = useDispatch();
