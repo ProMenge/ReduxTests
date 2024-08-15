@@ -10,6 +10,7 @@ import * as Styles from "./styles";
 
 // Utilities
 import { loginUser, logoutUser} from "../../redux/user/actions"
+import { selectProductsCount } from "../../redux/cart/cart.selector";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -19,9 +20,7 @@ function Header() {
 
   const dispatch = useDispatch();
 
-  const productsCount = useMemo (() => {
-    return products.reduce((acc, curr) => acc + curr.quantity, 0)
-  }, [products])
+  const productsCount = useSelector(selectProductsCount)
 
   const handleCartClick = () => {
     setCartIsVisible(true);
