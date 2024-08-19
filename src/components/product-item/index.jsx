@@ -4,17 +4,16 @@ import { useDispatch } from "react-redux";
 // Components
 import CustomButton from "../custom-button/index";
 
-// Styles
+import { addProduct } from "../../redux/cart/slice";
 import * as Styles from "./styles";
-import { addProductToCart } from "../../redux/cart/actions";
 
 // Utilities
 
 const ProductItem = ({ product }) => {
   const dispacth = useDispatch();
   const handdleProductClick = () => {
-    dispacth(addProductToCart(product))
-  }
+    dispacth(addProduct(product));
+  };
 
   return (
     <Styles.ProductContainer>
